@@ -89,7 +89,8 @@ class _ImagesSliderState extends State<ImagesSlider> {
                 imageUrl: imageUrl,
                 placeholder: (context, imageUrl) => SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  child: const CircularProgressIndicator(),
+                  child: Container(
+                      child: const CircularProgressIndicator()),
                 ),
                 errorWidget: (context, url, error) => const Icon(
                   Icons.error,
@@ -97,7 +98,7 @@ class _ImagesSliderState extends State<ImagesSlider> {
                 ),
                 width: MediaQuery.of(context).size.width,
                 fit: widget.fillBoxWithoutAspectRatio
-                    ? BoxFit.fill
+                    ? BoxFit.cover
                     : BoxFit.fitWidth,
               ),
             ))
